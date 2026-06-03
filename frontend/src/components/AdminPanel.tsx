@@ -163,7 +163,7 @@ export default function AdminPanel({
   const handleDeleteCheck = (plant: Plant) => {
     const isConfirmed = window.confirm(`Are you sure you want to permanently delete "${plant.name}" from your catalog?`);
     if (isConfirmed) {
-      fetch(`/api/plants/${plant.id}`, {
+      fetch(`${import.meta.env.VITE_API_URL || ''}/api/plants/${plant.id}`, {
         method: 'DELETE'
       })
       .then(async (res) => {
@@ -535,6 +535,10 @@ export default function AdminPanel({
         </div>
 
       </motion.div>
+    </div>
+  );
+}
+motion.div>
     </div>
   );
 }

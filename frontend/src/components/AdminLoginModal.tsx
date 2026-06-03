@@ -31,7 +31,7 @@ export default function AdminLoginModal({
 
     setLoading(true);
 
-    fetch('/api/admin/login', {
+    fetch(`${import.meta.env.VITE_API_URL || ''}/api/admin/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
