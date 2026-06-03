@@ -31,7 +31,7 @@ export default function AdminLoginModal({
 
     setLoading(true);
 
-    fetch('http://localhost:5000/api/admin/login', {
+    fetch('/api/admin/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

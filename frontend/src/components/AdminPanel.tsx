@@ -109,8 +109,8 @@ export default function AdminPanel({
     if (price <= 0) return setFormError('Please enter a valid price greater than zero.');
 
     const url = editingPlant 
-      ? `http://localhost:5000/api/plants/${editingPlant.id}` 
-      : 'http://localhost:5000/api/plants';
+      ? `/api/plants/${editingPlant.id}` 
+      : '/api/plants';
     const method = editingPlant ? 'PUT' : 'POST';
 
     const plantPayload = {
@@ -163,7 +163,7 @@ export default function AdminPanel({
   const handleDeleteCheck = (plant: Plant) => {
     const isConfirmed = window.confirm(`Are you sure you want to permanently delete "${plant.name}" from your catalog?`);
     if (isConfirmed) {
-      fetch(`http://localhost:5000/api/plants/${plant.id}`, {
+      fetch(`/api/plants/${plant.id}`, {
         method: 'DELETE'
       })
       .then(async (res) => {

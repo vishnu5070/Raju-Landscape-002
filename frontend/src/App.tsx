@@ -53,7 +53,7 @@ export default function App() {
   const [catalogError, setCatalogError] = useState<string>('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/plants')
+    fetch('/api/plants')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch catalog plants.');
         return res.json();
